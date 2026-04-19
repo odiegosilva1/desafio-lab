@@ -170,17 +170,3 @@ O validador executa **12 testes** automatizados:
 
 ---
 
-## 👨‍💻 Autor
-
-Desenvolvido para a disciplina de Programação - **UNISINOS**
-
----
-
-## 🎯 Resumo
-
-✅ Leitura de arquivo  
-✅ Busca recursiva com backtracking  
-✅ Marcação do caminho da solução  
-✅ Tratamento de exceções  
-✅ 12/12 testes no validador  
-✅ Nota máxima: 1.50/1.50
