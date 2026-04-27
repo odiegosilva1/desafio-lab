@@ -1,0 +1,123 @@
+================================================================================
+                    DESAFIO LAB - NARRACAO POR ETAPA
+================================================================================
+
+duracao: ate 1 minuto por etapa
+
+--------------------------------------------------------------------------------
+
+ETAPA 1 - LABIRINTO (BACKTRACKING)
+================================================================================
+
+[Intro - 10 segundos]
+Bem vindos ao Desafio Lab! Sou seu professor e vou apresentar cada etapa 
+desse projeto de estruturas de dados em Java.
+
+[Conteudo - 40 segundos]
+Na primeira etapa, implementamos um solucionador de labirintos usando 
+recursao e backtracking. O programa le um arquivo de texto com o labirinto, 
+onde X representa paredes, espaco vazio e D e o destino.
+
+O algoritmo comeca na posicao zero zero e tenta encontrar o caminho ate a 
+saida. Quando encontra um beco sem saida, ele faz backtracking, ou seja, 
+retorna pela mesma caminho ate encontrar um novo caminho possivel.
+
+A solucao e marcada com o caractere #, mostrando o caminho encontrado.
+
+[Execucao - 10 segundos]
+Para executar, use:
+javac -d src src/Etapa1/*.java
+java -cp src Etapa1.PrincipalLabirinto
+
+--------------------------------------------------------------------------------
+
+ETAPA 2 - ORDENACAO E PESQUISA
+================================================================================
+
+[Intro - 10 segundos]
+Na segunda etapa, trabalhamos com ordenacao de dados e pesquisa binaria.
+
+[Conteudo - 40 segundos]
+Aqui criamos um sistema para gerenciar candidatos a uma eleicao. Cada 
+candidato tem nome, partido e intencoes de voto.
+
+Implementamos metodos para ordenar candidatos de tres formas diferentes: 
+por nome alfabetico, por partido politico e por quantidade de votos. 
+Tambem implementamos a pesquisa binaria, que permite buscar um candidato 
+pelo nome de forma muito eficiente, dividindo o espao de busca pela metade 
+a cada tentativa.
+
+[Execucao - 10 segundos]
+Para executar:
+javac -d src src/Etapa2/*.java
+java -cp src Etapa2.PrincipalCandidatos
+
+--------------------------------------------------------------------------------
+
+ETAPA 3 - LISTA E PILHA ESTATICA
+================================================================================
+
+[Intro - 10 segundos]
+A terceira etapa apresenta estruturas de dados fundamentais: listas e 
+pilhas com tamanho fixo.
+
+[Conteudo - 40 segundos]
+Aqui implementamos duas estruturas usando arrays de tamanho fixo.
+
+A StaticList e uma lista linear que armazena elementos em um array. 
+Possui metodos para inserir, remover, buscar e acessar elementos por 
+posicao. Tambem tem um metodo recursivo para contar elementos.
+
+A StaticStack implementa o conceito de pilha LIFO, ou seja, Last In 
+First Out. O ultimo elemento a entrar e o primeiro a sair. Util para 
+expressoes matematicas e validacao de syntax.
+
+Como exemplo pratico, usamos a pilha para validar expressoes com 
+colchetes, chaves e parenteses. A pilha verifica se cada simbolo de 
+abertura tem seu simbolo de fechamento correspondente.
+
+[Execucao - 10 segundos]
+Para executar:
+javac -d src src/Etapa3/*.java
+java -cp src Etapa3.PrincipalEtapa3
+
+--------------------------------------------------------------------------------
+
+ETAPA 4 - ESTRUTURAS DINAMICAS
+================================================================================
+
+[Intro - 10 segundos]
+Na quarta e ultima etapa, implementamos estruturas dinamicas que podem 
+crescer e diminuir durante a execucao.
+
+[Conteudo - 40 segundos]
+Diferente da etapa anterior, aqui usamos nodes encadeados para criar 
+estruturas que se adaptam ao tamanho necessario.
+
+A LinkedList e uma lista duplamente encadeada onde cada node aponta para 
+o proximo. Permite insercao e remocao eficiente em qualquer posicao.
+
+A LinkedStack e uma pilha dinamica que usa nodes em vez de array. 
+Nunca fica cheia, pode crescer indefinidamente.
+
+A LinkedQueue implementa uma fila, onde o primeiro elemento a entrar 
+e o primeiro a sair. Usamos para controlar senhas de atendimento ou 
+filas de processamento.
+
+[Execucao - 10 segundos]
+Para executar:
+javac -d src src/Etapa4/*.java
+java -cp src Etapa4.PrincipalEtapa4
+
+--------------------------------------------------------------------------------
+
+CONCLUSAO
+================================================================================
+
+Essas quatro etapas cobrem os conceitos fundamentais de estruturas de dados:
+recursao, ordenacao, pesquisa, listas, pilhas e filas. Agora voce pode 
+compilar e executar cada etapa para ver o funcionamento pratico.
+
+Obrigado por acompanhar! ate a proxima.
+
+================================================================================

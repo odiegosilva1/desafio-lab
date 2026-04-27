@@ -1,171 +1,238 @@
-# 🧩 Projeto Labirinto - Etapa 1
+# Desafio Lab - Estruturas de Dados
 
-## 📖 Sobre o Projeto
+Este projeto contém 4 desafios de estruturas de dados implementados em Java.
 
-Implementação em Java de um **solucionador de labirintos** utilizando **recursão e backtracking**. O programa lê um labirinto de um arquivo de texto e encontra automaticamente o caminho até a saída, marcando a rota com `#`.
-
-### 🧠 Conceitos aplicados
-
-- Recursão e Backtracking
-- Manipulação de arquivos (try-with-resources)
-- Arrays bidimensionais
-- Programação orientada a objetos
-
----
-
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
-projeto/
-├── src/
-│   └── Etapa1/
-│       ├── Labirinto.java
-│       ├── PrincipalLabirinto.java
-│       ├── ValidadorEtapa1EstudanteMRK.java
-│       └── labirinto.txt
+desafio-lab/
+├── README.md
+└── src/
+    ├── Etapa1/    - Labirinto (Backtracking)
+    ├── Etapa2/    - Ordenacao e Pesquisa
+    ├── Etapa3/    - Lista Estatica e Pilha Estatica
+    └── Etapa4/    - Lista Encadeada, Fila e Pilha Dinamicas
 ```
 
 ---
 
-## 🗺️ Formato do Arquivo `labirinto.txt`
-
-| Caractere | Significado               |
-|-----------|---------------------------|
-| `X`       | Parede (bloqueado)        |
-| ` `       | Caminho aberto (espaço)   |
-| `D`       | Destino / Saída           |
-
-### Exemplo:
-
-```
-XXXXXX  XXXXXX
-  X XX XXXXXX X
-X  X XXX   XXXX
-  XX X XXX XXXX
-X     XX XXXX X
-XX  XXX XXXX XX
-XX     DXXXXXXX
-```
-
----
-
-## 🚀 Como Executar
-
-### ✅ Pré-requisitos
+## Requisito
 
 - Java JDK 8 ou superior
 
-### 🔧 Comandos
+---
+
+## Como Compilar e Executar
+
+### Compilar tudo
 
 ```bash
-# 1. Compilar
-javac src/Etapa1/*.java
+javac -d src src/Etapa1/*.java src/Etapa2/*.java src/Etapa3/*.java src/Etapa4/*.java
+```
 
-# 2. Executar o programa principal
+### Executar o programa principal de cada etapa
+
+```bash
+# Etapa 1 - Labirinto
 java -cp src Etapa1.PrincipalLabirinto
 
-# 3. Executar o validador
+# Etapa 2 - Candidatos
+java -cp src Etapa2.PrincipalCandidatos
+
+# Etapa 3 - Lista e Pilha Estatica
+java -cp src Etapa3.PrincipalEtapa3
+
+# Etapa 4 - Lista Encadeada, Fila e Pilha Dinamicas
+java -cp src Etapa4.PrincipalEtapa4
+```
+
+### Executar o validador de cada etapa
+
+```bash
+# Etapa 1
+java -cp src Etapa1.ValidadorEtapa1EstudanteMRK
+
+# Etapa 2
+java -cp src Etapa2.ValidadorEtapa2MRK
+
+# Etapa 3
+java -cp src Etapa3.ValidadorEtapa3EstudanteMRK
+
+# Etapa 4
+java -cp src Etapa4.ValidadorEtapa4MRK
+```
+
+---
+
+## Etapa 1 - Labirinto (Backtracking)
+
+### Conceitos
+- Recursao e Backtracking
+- Manipulacao de arquivos
+- Arrays bidimensionais
+
+### Arquivos
+- `Labirinto.java` - Classe principal com algoritmos
+- `PrincipalLabirinto.java` - Classe main
+- `ValidadorEtapa1EstudanteMRK.java` - Validador
+- `labirinto.txt` - Arquivo de entrada
+
+### Formato do labirinto.txt
+
+| Caractere | Significado |
+|-----------|-------------|
+| `X` | Parede |
+| ` ` | Caminho aberto |
+| `D` | Destino/Saida |
+
+### Comandos
+
+```bash
+javac -d src src/Etapa1/*.java
+java -cp src Etapa1.PrincipalLabirinto
 java -cp src Etapa1.ValidadorEtapa1EstudanteMRK
 ```
 
 ---
 
-## 📊 Exemplo de Saída
+## Etapa 2 - Ordenacao e Pesquisa
 
-### Labirinto inicial:
-```
-XXXXXX  XXXXXX
-  X XX XXXXXX X
-X  X XXX   XXXX
-  XX X XXX XXXX
-X     XX XXXX X
-XX  XXX XXXX XX
-XX     DXXXXXXX
-```
+### Conceitos
+- Ordenacao (BubbleSort)
+- Pesquisa binaria
+- Classes model
 
-### Labirinto com solução:
-```
-#XXXXXX  XXXXXX
-##X XX XXXXXX X
-X# X XXX   XXXX
- #XX X XXX XXXX
-X##   XX XXXX X
-XX# XXX XXXX XX
-XX#####DXXXXXXX
-```
+### Arquivos
+- `Candidato.java` - Classe modelo
+- `OrdenarCandidatos.java` - Metodos de ordenacao
+- `PrincipalCandidatos.java` - Classe main
+- `ValidadorEtapa2MRK.java` - Validador
 
----
+### Metodos implementados
+- `ordenaCandidatosPorNome()`
+- `ordenaCandidatosPorVotos()`
+- `ordenaCandidatosPorPartido()`
+- `pesquisaBinariaCandidatos()`
 
-## ✅ Testes do Validador
+### Comandos
 
-O validador executa **12 testes** automatizados:
-
-| # | Teste | Descrição |
-|---|-------|-----------|
-| 1 | `validaClasse` | Verifica se a classe `Labirinto` existe |
-| 2 | `validaExecucaoMetodoComParametro` | Testa o método `criaLabirinto` |
-| 3 | `validaExecucaoMetodo` | Testa o método `percorreLabirinto` |
-| 4 | `validaMetodo` | Verifica método `imprimeLabirinto` |
-| 5 | `validaAtributo` | Verifica atributo `PAREDE` |
-| 6 | `validaAtributo` | Verifica atributo `CAMINHO_ABERTO` |
-| 7 | `validaAtributo` | Verifica atributo `SAIDA` |
-| 8 | `validaAtributo` | Verifica atributo `CAMINHO_SOLUCAO` |
-| 9 | `validaClasse` | Verifica classe `PrincipalLabirinto` |
-| 10 | `validaExecucaoClassePrincipal` | Executa `PrincipalLabirinto` e busca "Solução encontrada" |
-| 11 | `validaRecursao` | Verifica se existe método recursivo |
-| 12 | `validaTryCatch` | Verifica tratamento de exceção no `criaLabirinto` |
-
-### Resultado esperado:
-
-```
-[OK] Classe Labirinto encontrada.
-[OK] Método criaLabirinto executado com sucesso.
-[OK] Labirinto foi criado com sucesso.
-[OK] Método percorreLabirinto executado com sucesso.
-[OK] Método imprimeLabirinto encontrado.
-[OK] Atributo PAREDE encontrado.
-[OK] Atributo CAMINHO_ABERTO encontrado.
-[OK] Atributo SAIDA encontrado.
-[OK] Atributo CAMINHO_SOLUCAO encontrado.
-[OK] Classe PrincipalLabirinto encontrada.
-[OK] Classe PrincipalLabirinto executada com sucesso.
-[OK] Método recursivo encontrado.
-[OK] Método criaLabirinto contém try-catch.
-+---------------------------------------------------------------------------+
-| Nota final: 1,50/1.50 (12 acertos em 12 testes) |
-+---------------------------------------------------------------------------+
+```bash
+javac -d src src/Etapa2/*.java
+java -cp src Etapa2.PrincipalCandidatos
+java -cp src Etapa2.ValidadorEtapa2MRK
 ```
 
 ---
 
-## 📚 Principais Métodos da Classe `Labirinto`
+## Etapa 3 - Lista e Pilha Estatica
 
-| Método | Descrição |
-|--------|-----------|
-| `criaLabirinto(String filename)` | Lê o arquivo e carrega o labirinto |
-| `percorreLabirinto()` | Inicia a busca recursiva pela saída |
-| `resolverLabirinto(int x, int y)` | Método recursivo que explora o labirinto |
-| `imprimeLabirinto()` | Exibe o labirinto no console |
+### Conceitos
+- Listas lineares com array fixo
+- Pilha (Stack) com capacidade limitada
+- Interface generica
+- Metodo recursivo
+- Validacao de colchetes
+
+### Arquivos
+- `List.java` - Interface da lista
+- `Stack.java` - Interface da pilha
+- `StaticList.java` - Implementacao da lista
+- `StaticStack.java` - Implementacao da pilha
+- `PrincipalEtapa3.java` - Classe main
+- `Etapa3.java` - Validador de colchetes
+- `ValidadorEtapa3EstudanteMRK.java` - Validador
+
+### Metodos da StaticList
+- `insert(E, pos)` - Insere elemento na posicao
+- `remove(pos)` - Remove elemento da posicao
+- `get(pos)` - Retorna elemento na posicao
+- `search(E)` - Busca elemento
+- `contaElementos()` - Contagem iterativa
+- `contaElementosRecursivo()` - Contagem recursiva
+
+### Metodos da StaticStack
+- `push(E)` - Empilha elemento
+- `pop()` - Desempilha elemento
+- `top()` - Retorna topo
+- `isEmpty()` - Verifica se vazia
+- `isFull()` - Verifica se cheia
+- `numElements()` - Quantidade de elementos
+
+### Comandos
+
+```bash
+javac -d src src/Etapa3/*.java
+java -cp src Etapa3.PrincipalEtapa3
+java -cp src Etapa3.Etapa3
+java -cp src Etapa3.ValidadorEtapa3EstudanteMRK
+```
 
 ---
 
-## 🧠 Explicação do Algoritmo
+## Etapa 4 - Estruturas Dinamicas
 
-1. Começa na posição `[0][0]`
-2. Marca a posição atual com `#`
-3. Tenta mover para: **cima, baixo, esquerda, direita**
-4. Se encontrar `'D'` → solução encontrada
-5. Se encontrar parede `'X'` ou já visitado → volta (backtracking)
-6. Repete até encontrar a saída ou explorar todo o labirinto
+### Conceitos
+- Listas encadeadas (LinkedList)
+- Pilha dinamica (LinkedStack)
+- Fila dinamica (LinkedQueue)
+- Nodes encadeados
+
+### Arquivos
+- `Node.java` - Classe Node generica
+- `Stack.java` - Interface da pilha
+- `Queue.java` - Interface da fila
+- `LinkedList.java` - Implementacao da lista
+- `LinkedStack.java` - Implementacao da pilha
+- `LinkedQueue.java` - Implementacao da fila
+- `PrincipalEtapa4.java` - Classe main
+- `ValidadorEtapa4MRK.java` - Validador
+
+### Metodos da LinkedList
+- `insertFirst(E)` - Insere no inicio
+- `insertLast(E)` - Insere no fim
+- `insert(E, pos)` - Insere na posicao
+- `removeFirst()` - Remove do inicio
+- `removeLast()` - Remove do fim
+- `remove(pos)` - Remove da posicao
+- `get(pos)` - Retorna elemento
+- `search(E)` - Busca elemento
+- `isEmpty()` - Verifica se vazia
+- `isFull()` - Sempre falso (dinamico)
+- `numElements()` - Quantidade
+
+### Metodos da LinkedStack
+- `push(E)` - Empilha elemento
+- `pop()` - Desempilha elemento
+- `top()` - Retorna topo
+- `isEmpty()` - Verifica se vazia
+- `isFull()` - Sempre falso (dinamico)
+- `numElements()` - Quantidade
+
+### Metodos da LinkedQueue
+- `enqueue(E)` - Insere no fim
+- `dequeue()` - Remove do inicio
+- `first()` - Primeiro elemento
+- `front()` - Primeiro elemento
+- `back()` - Ultimo elemento
+- `isEmpty()` - Verifica se vazia
+- `isFull()` - Sempre falso (dinamico)
+- `numElements()` - Quantidade
+
+### Comandos
+
+```bash
+javac -d src src/Etapa4/*.java
+java -cp src Etapa4.PrincipalEtapa4
+java -cp src Etapa4.ValidadorEtapa4MRK
+```
 
 ---
 
-## 🐛 Possíveis Erros e Soluções
+## Resumo dos Validadores
 
-| Erro | Solução |
-|------|---------|
-| `ClassNotFoundException` | Execute da **RAIZ** com `-cp src` |
-| `FileNotFoundException` | Verifique se `labirinto.txt` está em `src/Etapa1/` |
-| Try-catch não reconhecido | Use `catch (Exception e)` |
-
----
+| Etapa | Nota Maxima | Testes |
+|-------|-------------|--------|
+| Etapa 1 | 1.50 | 12 |
+| Etapa 2 | 1.50 | - |
+| Etapa 3 | 1.50 | 15 |
+| Etapa 4 | 1.50 | 22 |
