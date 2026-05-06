@@ -10,8 +10,8 @@ ETAPA 1 - LABIRINTO (BACKTRACKING)
 ================================================================================
 
 [Intro - 10 segundos]
-Bem vindos ao Desafio Lab! Sou seu professor e vou apresentar cada etapa 
-desse projeto de estruturas de dados em Java.
+Bem vindos me chamo Diego Silva sou aluno do curso de ADS.
+
 
 [Conteudo - 40 segundos]
 Na primeira etapa, implementamos um solucionador de labirintos usando 
