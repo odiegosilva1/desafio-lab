@@ -53,7 +53,7 @@ java -cp src Etapa4.PrincipalEtapa4
 java -cp src Etapa1.ValidadorEtapa1EstudanteMRK
 
 # Etapa 2
-java -cp src Etapa2.ValidadorEtapa2MRK
+java -cp src Etapa2.ValidadorEtapa2EstudanteMRK
 
 # Etapa 3
 java -cp src Etapa3.ValidadorEtapa3EstudanteMRK
